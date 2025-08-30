@@ -1960,3 +1960,35 @@ java.lang.Exception: Resource '/F042K6_CustomHID_ButtonMatrix_HID_2way' does not
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.core.resources 2 2 2025-08-30 16:11:06.255
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2025-08-30 16:11:06.255
+!MESSAGE The project description file (.project) for 'F042K6_CustomHID_ButtonMatrix' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-08-30 16:12:38.467
+!MESSAGE Error rebuilding index: F042K6_CustomHID_ButtonMatrix
+!STACK 1
+C Model Exception: C Model Status [Element STM32F0xx_HAL_Driver does not exist.]
+	at org.eclipse.cdt.internal.core.model.CElement.newNotPresentException(CElement.java:485)
+	at org.eclipse.cdt.internal.core.model.CContainer.buildStructure(CContainer.java:159)
+	at org.eclipse.cdt.internal.core.model.Openable.generateInfos(Openable.java:276)
+	at org.eclipse.cdt.internal.core.model.CElement.openWhenClosed(CElement.java:428)
+	at org.eclipse.cdt.internal.core.model.CElement.getElementInfo(CElement.java:306)
+	at org.eclipse.cdt.internal.core.model.CElement.getElementInfo(CElement.java:296)
+	at org.eclipse.cdt.internal.core.model.Parent.getChildren(Parent.java:57)
+	at org.eclipse.cdt.internal.core.model.CElement.accept(CElement.java:525)
+	at org.eclipse.cdt.internal.core.model.CElement.accept(CElement.java:527)
+	at org.eclipse.cdt.internal.core.model.CElement.accept(CElement.java:527)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMRebuildTask.createDelegate(PDOMRebuildTask.java:122)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMRebuildTask.run(PDOMRebuildTask.java:82)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.core 4 969 2025-08-30 16:12:38.468
+!MESSAGE Element STM32F0xx_HAL_Driver does not exist.
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-30 16:16:30.241
+!MESSAGE Indexed 'F042K6_CustomHID_ButtonMatrix' (19 sources, 81 headers) in 1.51 sec: 4,269 declarations; 24,333 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.007%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-30 16:26:42.223
+!MESSAGE Indexed 'F042K6_CustomHID_ButtonMatrix' (30 sources, 96 headers) in 2.17 sec: 5,941 declarations; 35,009 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0049%)

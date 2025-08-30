@@ -1,4 +1,4 @@
-15:21:52 **** Build of configuration Release for project F042K6_CustomHID_ButtonMatrix ****
+16:26:57 **** Incremental Build of configuration Release for project F042K6_CustomHID_ButtonMatrix ****
 make -j16 all 
 arm-none-eabi-size  F042K6_CustomHID_ButtonMatrix.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  F042K6_CustomHID_ButtonMatrix.elf
 Finished building: default.size.stdout
  
 
-15:21:53 Build Finished. 0 errors, 0 warnings. (took 558ms)
+16:26:58 Build Finished. 0 errors, 0 warnings. (took 908ms)
 
