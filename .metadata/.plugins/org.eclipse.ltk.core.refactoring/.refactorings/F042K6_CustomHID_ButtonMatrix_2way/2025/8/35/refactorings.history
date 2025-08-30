@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;F042K6_CustomHID_ButtonMatrix_2way/F042K6_CustomHID_ButtonMatrix.ioc&apos; to &apos;F042K6_CustomHID_ButtonMatrix_2way.ioc&apos;" description="Rename resource &apos;F042K6_CustomHID_ButtonMatrix.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="F042K6_CustomHID_ButtonMatrix.ioc" name="F042K6_CustomHID_ButtonMatrix_2way.ioc" stamp="1756546987801" updateReferences="true"/>
+</session>

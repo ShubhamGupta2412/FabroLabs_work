@@ -1,0 +1,21 @@
+12:31:50 **** Incremental Build of configuration Debug for project nucleo-f042k6-customHID-test ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:5: warning: implicit declaration of function 'USBD_CUSTOM_HID_SendReport' [-Wimplicit-function-declaration]
+  131 |     USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, tx_buffer, 64);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "nucleo-f042k6-customHID-test.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\sgupt\STM32CubeIDE\workspace_1.19.0\nucleo-f042k6-customHID-test\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="nucleo-f042k6-customHID-test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: nucleo-f042k6-customHID-test.elf
+ 
+arm-none-eabi-size  nucleo-f042k6-customHID-test.elf 
+arm-none-eabi-objdump -h -S nucleo-f042k6-customHID-test.elf  > "nucleo-f042k6-customHID-test.list"
+   text	   data	    bss	    dec	    hex	filename
+  30672	    356	   3684	  34712	   8798	nucleo-f042k6-customHID-test.elf
+Finished building: default.size.stdout
+ 
+Finished building: nucleo-f042k6-customHID-test.list
+ 
+
+12:31:54 Build Finished. 0 errors, 1 warnings. (took 3s.234ms)
+
