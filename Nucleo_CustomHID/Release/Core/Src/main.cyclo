@@ -1,0 +1,10 @@
+../Core/Src/main.c:121:9:reverseBits	1
+../Core/Src/main.c:138:9:read165_LSBFIRST_phase	3
+../Core/Src/main.c:155:6:sendCmd	1
+../Core/Src/main.c:169:6:startBeep	1
+../Core/Src/main.c:176:6:handleBeep	3
+../Core/Src/main.c:184:6:processButton	5
+../Core/Src/main.c:207:6:processCombo	7
+../Core/Src/main.c:348:6:SystemClock_Config	4
+../Core/Src/main.c:241:5:main	6
+../Core/Src/main.c:441:6:Error_Handler	1

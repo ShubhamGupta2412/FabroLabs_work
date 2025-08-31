@@ -1,0 +1,10 @@
+../Core/Src/main.c:121:9:reverseBits	0	static
+../Core/Src/main.c:138:9:read165_LSBFIRST_phase	16	static
+../Core/Src/main.c:155:6:sendCmd	24	static
+../Core/Src/main.c:169:6:startBeep	8	static
+../Core/Src/main.c:176:6:handleBeep	8	static
+../Core/Src/main.c:184:6:processButton	40	static
+../Core/Src/main.c:207:6:processCombo	32	static
+../Core/Src/main.c:348:6:SystemClock_Config	104	static,ignoring_inline_asm
+../Core/Src/main.c:241:5:main	56	static
+../Core/Src/main.c:441:6:Error_Handler	0	static,ignoring_inline_asm

@@ -1,0 +1,10 @@
+10:13:53 **** Incremental Build of configuration Release for project Nucleo_CustomHID ****
+make -j16 all 
+arm-none-eabi-size  Nucleo_CustomHID.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16408	    564	   4092	  21064	   5248	Nucleo_CustomHID.elf
+Finished building: default.size.stdout
+ 
+
+10:13:54 Build Finished. 0 errors, 0 warnings. (took 941ms)
+

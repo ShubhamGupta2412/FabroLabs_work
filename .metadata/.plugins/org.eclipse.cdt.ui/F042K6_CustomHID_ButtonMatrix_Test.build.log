@@ -1,0 +1,10 @@
+10:00:55 **** Incremental Build of configuration Debug for project F042K6_CustomHID_ButtonMatrix_Test ****
+make -j16 all 
+arm-none-eabi-size  F042K6_CustomHID_ButtonMatrix_Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29712	    220	   3428	  33360	   8250	F042K6_CustomHID_ButtonMatrix_Test.elf
+Finished building: default.size.stdout
+ 
+
+10:00:56 Build Finished. 0 errors, 0 warnings. (took 969ms)
+
