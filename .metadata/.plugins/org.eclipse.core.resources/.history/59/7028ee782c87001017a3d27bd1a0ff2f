@@ -162,7 +162,7 @@ void sendCmd(const char* cmd) {
     strncpy((char*)&tx_buffer[2], cmd, 62); // Leave space for null terminator
 
     // Send via USB HID
-    HID_SendData(tx_buffer, 64);
+    USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, tx_buffer, 64);
 }
 
 void startTone(uint32_t frequency, uint32_t duration) {
@@ -343,44 +343,8 @@ int main(void)
 	        HID_SendData(heartbeat, strlen((char*)heartbeat));
 	        last_send_time = HAL_GetTick();
 	      }
-	      // Read button matrix via 74HC165
-	      	  latchInputs();
-	      	  HAL_GPIO_WritePin(PIN_CLK_PORT, PIN_CLK_PIN, GPIO_PIN_SET);
-	      	  HAL_GPIO_WritePin(PIN_CE_PORT, PIN_CE_PIN, GPIO_PIN_RESET);
 
-	      	  uint8_t byteU1 = reverseBits(read165_LSBFIRST_phase()) & 0x7F;
-	      	  uint8_t byteU2 = reverseBits(read165_LSBFIRST_phase());
-
-	      	  HAL_GPIO_WritePin(PIN_CE_PORT, PIN_CE_PIN, GPIO_PIN_SET);
-	      	  HAL_GPIO_WritePin(PIN_CLK_PORT, PIN_CLK_PIN, GPIO_PIN_RESET);
-
-	      	  int idx = 0;
-
-	      	  // Process Knobs (U2 0..3)
-	      	  for (int i = 0; i < 4; i++, idx++) {
-	      	      uint8_t pressedNow = (byteU2 >> i) & 1;
-	      	      processButton(idx, pressedNow);
-	      	  }
-
-	      	  // Process Normal buttons (U2 4..7, U1 0..4)
-	      	  for (int i = 4; i < 8; i++, idx++) {
-	      	      uint8_t pressedNow = (byteU2 >> i) & 1;
-	      	      processButton(idx, pressedNow);
-	      	  }
-
-	      	  for (int i = 0; i < 5; i++, idx++) {
-	      	      uint8_t pressedNow = (byteU1 >> i) & 1;
-	      	      processButton(idx, pressedNow);
-	      	  }
-
-	      	  // Process combo state
-	      	  uint8_t comboState = ((byteU1 >> 6) & 1) << 1 | ((byteU1 >> 5) & 1);
-	      	  processCombo(comboState);
-
-	      	  // Handle buzzer
-	      	  handleBeep();
-
-	      	  HAL_Delay(50);  // 50ms delay between reads
+	      HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }

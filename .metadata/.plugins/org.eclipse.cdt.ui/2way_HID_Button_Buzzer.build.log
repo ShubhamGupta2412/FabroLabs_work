@@ -1,10 +1,10 @@
-17:26:59 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+17:43:04 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
 make -j16 all 
 arm-none-eabi-size  2way_HID_Button_Buzzer.elf 
    text	   data	    bss	    dec	    hex	filename
-  17548	    436	   4220	  22204	   56bc	2way_HID_Button_Buzzer.elf
+  18852	    564	   4300	  23716	   5ca4	2way_HID_Button_Buzzer.elf
 Finished building: default.size.stdout
  
 
-17:27:00 Build Finished. 0 errors, 0 warnings. (took 887ms)
+17:43:04 Build Finished. 0 errors, 0 warnings. (took 558ms)
 

@@ -162,7 +162,7 @@ void sendCmd(const char* cmd) {
     strncpy((char*)&tx_buffer[2], cmd, 62); // Leave space for null terminator
 
     // Send via USB HID
-    HID_SendData(tx_buffer, 64);
+    USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, tx_buffer, 64);
 }
 
 void startTone(uint32_t frequency, uint32_t duration) {

@@ -952,3 +952,34 @@ arm-none-eabi-size  2way_HID_Button_Buzzer.elf
   17548	    436	   4220	  22204	   56bc	2way_HID_Button_Buzzer.elf
 Finished building: default.size.stdout
  
+17:39:22 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'sendCmd':
+../Core/Src/main.c:165:33: error: 'hUsbDeviceFS' undeclared (first use in this function)
+  165 |     USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, tx_buffer, 64);
+      |                                 ^~~~~~~~~~~~
+../Core/Src/main.c:165:33: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+17:43:00 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "2way_HID_Button_Buzzer.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\sgupt\STM32CubeIDE\workspace_1.19.0\2way_HID_Button_Buzzer\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2way_HID_Button_Buzzer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2way_HID_Button_Buzzer.elf
+ 
+arm-none-eabi-size  2way_HID_Button_Buzzer.elf 
+arm-none-eabi-objdump -h -S 2way_HID_Button_Buzzer.elf  > "2way_HID_Button_Buzzer.list"
+   text	   data	    bss	    dec	    hex	filename
+  18852	    564	   4300	  23716	   5ca4	2way_HID_Button_Buzzer.elf
+Finished building: default.size.stdout
+ 
+Finished building: 2way_HID_Button_Buzzer.list
+ 
+17:43:04 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-size  2way_HID_Button_Buzzer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18852	    564	   4300	  23716	   5ca4	2way_HID_Button_Buzzer.elf
+Finished building: default.size.stdout
+ 
