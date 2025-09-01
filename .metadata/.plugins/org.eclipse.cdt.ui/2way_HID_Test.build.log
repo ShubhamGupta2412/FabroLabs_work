@@ -1,4 +1,4 @@
-14:50:20 **** Incremental Build of configuration Release for project 2way_HID_Test ****
+17:19:44 **** Build of configuration Release for project 2way_HID_Test ****
 make -j16 all 
 arm-none-eabi-size  2way_HID_Test.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  2way_HID_Test.elf
 Finished building: default.size.stdout
  
 
-14:50:21 Build Finished. 0 errors, 0 warnings. (took 651ms)
+17:19:45 Build Finished. 0 errors, 0 warnings. (took 927ms)
 

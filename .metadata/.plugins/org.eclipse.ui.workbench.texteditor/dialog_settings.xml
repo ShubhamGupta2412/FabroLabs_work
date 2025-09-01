@@ -3,8 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
-		<item value="CUSTOM_HID_OutEvent_FS"/>
+		<item value="USBD_CUSTOM_HID_HandleTypeDef"/>
 		<item value="USBD_CUSTOM_HID_DataOut"/>
+		<item value="CUSTOM_HID_OutEvent_FS"/>
 		<item value="_USBD_CUSTOM_HID_Itf"/>
 		<item value="buzzer_pin"/>
 		<item value="USBD_CUSTOM_HID_SendReport"/>
