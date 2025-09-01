@@ -1,0 +1,6 @@
+../USB_DEVICE/App/usbd_custom_hid_if.c:168:15:CUSTOM_HID_Init_FS	0	static
+../USB_DEVICE/App/usbd_custom_hid_if.c:192:15:CUSTOM_HID_OutEvent_FS	8	static
+../USB_DEVICE/App/usbd_custom_hid_if.c:179:15:CUSTOM_HID_DeInit_FS	0	static
+../USB_DEVICE/App/usbd_custom_hid_if.c:220:9:HID_SendData	16	static
+../USB_DEVICE/App/usbd_custom_hid_if.c:228:9:HID_ReceiveData	16	static
+../USB_DEVICE/App/usbd_custom_hid_if.c:240:9:HID_IsDataReceived	0	static
