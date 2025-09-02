@@ -983,3 +983,135 @@ arm-none-eabi-size  2way_HID_Button_Buzzer.elf
   18852	    564	   4300	  23716	   5ca4	2way_HID_Button_Buzzer.elf
 Finished building: default.size.stdout
  
+13:32:57 **** Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:356:15: error: unknown type name 'bool'
+  356 |               bool handled = false;
+      |               ^~~~
+../Core/Src/main.c:26:1: note: 'bool' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+   25 | #include "usbd_custom_hid_if.h"
+  +++ |+#include <stdbool.h>
+   26 | #include <string.h>
+../Core/Src/main.c:356:30: error: 'false' undeclared (first use in this function)
+  356 |               bool handled = false;
+      |                              ^~~~~
+../Core/Src/main.c:356:30: note: 'false' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:356:30: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:373:27: error: 'true' undeclared (first use in this function)
+  373 |                 handled = true;
+      |                           ^~~~
+../Core/Src/main.c:373:27: note: 'true' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+../Core/Src/main.c:397:35: error: '(BtnInfo *)&buttonMap' is a pointer; did you mean to use '->'?
+  397 |                          buttonMap.mode, buttonMap[8].mode,
+      |                                   ^
+      |                                   ->
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:50:17: warning: 'rx_len' defined but not used [-Wunused-variable]
+   50 | static uint16_t rx_len;
+      |                 ^~~~~~
+../Core/Src/main.c:49:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   49 | static uint8_t rx_buffer[64];
+      |                ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+13:33:54 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:397:35: error: '(BtnInfo *)&buttonMap' is a pointer; did you mean to use '->'?
+  397 |                          buttonMap.mode, buttonMap[8].mode,
+      |                                   ^
+      |                                   ->
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:50:17: warning: 'rx_len' defined but not used [-Wunused-variable]
+   50 | static uint16_t rx_len;
+      |                 ^~~~~~
+../Core/Src/main.c:49:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   49 | static uint8_t rx_buffer[64];
+      |                ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+13:35:10 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:397:55: error: invalid type argument of '->' (have 'BtnInfo')
+  397 |                          buttonMap->mode, buttonMap[8]->mode,
+      |                                                       ^~
+../Core/Src/main.c:398:38: error: invalid type argument of '->' (have 'BtnInfo')
+  398 |                          buttonMap[9]->mode, buttonMap[10]->mode,
+      |                                      ^~
+../Core/Src/main.c:398:59: error: invalid type argument of '->' (have 'BtnInfo')
+  398 |                          buttonMap[9]->mode, buttonMap[10]->mode,
+      |                                                           ^~
+../Core/Src/main.c:399:39: error: invalid type argument of '->' (have 'BtnInfo')
+  399 |                          buttonMap[11]->mode, buttonMap[12]->mode);
+      |                                       ^~
+../Core/Src/main.c:399:60: error: invalid type argument of '->' (have 'BtnInfo')
+  399 |                          buttonMap[11]->mode, buttonMap[12]->mode);
+      |                                                            ^~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:50:17: warning: 'rx_len' defined but not used [-Wunused-variable]
+   50 | static uint16_t rx_len;
+      |                 ^~~~~~
+../Core/Src/main.c:49:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   49 | static uint8_t rx_buffer[64];
+      |                ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+13:36:27 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:50:17: warning: 'rx_len' defined but not used [-Wunused-variable]
+   50 | static uint16_t rx_len;
+      |                 ^~~~~~
+../Core/Src/main.c:49:16: warning: 'rx_buffer' defined but not used [-Wunused-variable]
+   49 | static uint8_t rx_buffer[64];
+      |                ^~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:366:52: warning: '%s' directive output may be truncated writing up to 6 bytes into a region of size 3 [-Wformat-truncation=]
+  366 |                   snprintf(resp, sizeof(resp), "OK %s %s",
+      |                                                    ^~
+  367 |                            btn_name, (mode == 0) ? "PR" : "TG");
+      |                            ~~~~~~~~                 
+../Core/Src/main.c:366:19: note: 'snprintf' output between 7 and 13 bytes into a destination of size 6
+  366 |                   snprintf(resp, sizeof(resp), "OK %s %s",
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  367 |                            btn_name, (mode == 0) ? "PR" : "TG");
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:406:62: warning: '%s' directive output may be truncated writing up to 5 bytes into a region of size 4 [-Wformat-truncation=]
+  406 |                 snprintf(unknown, sizeof(unknown), "UNKNOWN: %s", cmd);
+      |                                                              ^~   ~~~
+../Core/Src/main.c:406:17: note: 'snprintf' output between 10 and 15 bytes into a destination of size 13
+  406 |                 snprintf(unknown, sizeof(unknown), "UNKNOWN: %s", cmd);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:383:52: warning: '%s' directive output may be truncated writing up to 6 bytes into a region of size 3 [-Wformat-truncation=]
+  383 |                   snprintf(resp, sizeof(resp), "OK %s %s",
+      |                                                    ^~
+  384 |                            btn_name, (mode == 0) ? "PR" : "TG");
+      |                            ~~~~~~~~                 
+../Core/Src/main.c:383:19: note: 'snprintf' output between 7 and 13 bytes into a destination of size 6
+  383 |                   snprintf(resp, sizeof(resp), "OK %s %s",
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  384 |                            btn_name, (mode == 0) ? "PR" : "TG");
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "2way_HID_Button_Buzzer.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\sgupt\STM32CubeIDE\workspace_1.19.0\2way_HID_Button_Buzzer\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2way_HID_Button_Buzzer.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2way_HID_Button_Buzzer.elf
+ 
+arm-none-eabi-size  2way_HID_Button_Buzzer.elf 
+arm-none-eabi-objdump -h -S 2way_HID_Button_Buzzer.elf  > "2way_HID_Button_Buzzer.list"
+   text	   data	    bss	    dec	    hex	filename
+  22148	    564	   4228	  26940	   693c	2way_HID_Button_Buzzer.elf
+Finished building: default.size.stdout
+ 
+Finished building: 2way_HID_Button_Buzzer.list
+ 
+13:36:32 **** Incremental Build of configuration Release for project 2way_HID_Button_Buzzer ****
+make -j16 all 
+arm-none-eabi-size  2way_HID_Button_Buzzer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22148	    564	   4228	  26940	   693c	2way_HID_Button_Buzzer.elf
+Finished building: default.size.stdout
+ 

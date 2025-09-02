@@ -24,7 +24,6 @@
 /* USER CODE BEGIN Includes */
 #include "usbd_custom_hid_if.h"
 #include <string.h>
-#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,6 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -259,22 +259,6 @@ void processCombo(uint8_t state) {
         }
     }
 }
-
-// Helpers
-static int getButtonIndexByName(const char* name) {
-  for (int i = 0; i < 13; i++) {
-    if (strcmp(name, buttonMap[i].baseCmd) == 0) return i;
-  }
-  return -1;
-}
-
-static void sendAck(const char* msg) {
-  uint8_t out[6] = {0};
-  size_t n = strlen(msg);
-  if (n > 63) n = 63;
-  memcpy(out, msg, n);
-  HID_SendData(out, (uint16_t)n);
-}
 /* USER CODE END 0 */
 
 /**
@@ -331,83 +315,27 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  if (HID_IsDataReceived())
-	  {
-	    uint8_t rx_buffer[6] = {0};
-	    uint16_t rx_len = 0;
-
-	    if (HID_ReceiveData(rx_buffer, &rx_len))
-	    {
-	      // Make safe C-string
-	      char cmd[6];
-	      size_t copyLen = (rx_len < 63) ? rx_len : 63;
-	      memcpy(cmd, rx_buffer, copyLen);
-	      cmd[copyLen] = '\0';
-
-	      // Trim CR/LF
-	      for (int i = (int)strlen(cmd) - 1; i >= 0; --i) {
-	        if (cmd[i] == '\r' || cmd[i] == '\n' || cmd[i] == 0x00) cmd[i] = '\0';
-	        else break;
-	      }
-
-	      // Parse commands
-	      char keyword[7] = {0};
-	      char btn_name[7] = {0};
-	      int mode = -1;
-	      bool handled = false;
-
-	      // Format-1: "SET_MODE A1 1"
-	      if (sscanf(cmd, "%15s %15s %d", keyword, btn_name, &mode) == 3 &&
-	          strcmp(keyword, "SET_MODE") == 0)
 	      {
-	        int idx = getButtonIndexByName(btn_name);
-	        if (idx >= 0 && idx < 13 && (mode == 0 || mode == 1)) {
-	          buttonMap[idx].mode = (mode == 0) ? PRESS_RELEASE : TOGGLE;
-	          char resp[6];
-	          snprintf(resp, sizeof(resp), "OK %s %s",
-	                   btn_name, (mode == 0) ? "PR" : "TG");
-	          sendAck(resp);
-	          startBeep(120);
-	        } else {
-	          sendAck("ERR INVALID_BTN_OR_MODE");
+	        if (HID_ReceiveData(rx_buffer, &rx_len))
+	        {
+	          if (rx_buffer[0] == 0x01)
+	          {
+	            uint8_t response[] = "Received command 0x01";
+	            HID_SendData(response, strlen((char*)response));
+	          }
+	          else if (rx_buffer[0] == 0x02)
+	          {
+	            uint8_t response[] = "Received command 0x02";
+	            HID_SendData(response, strlen((char*)response));
+	          }
+	          else
+	          {
+	            uint8_t response[32];
+	            snprintf((char*)response, sizeof(response), "Unknown cmd: 0x%02X", rx_buffer[0]);
+	            HID_SendData(response, strlen((char*)response));
+	          }
 	        }
-	        handled = true;
 	      }
-
-	      // Format-2: "A1 1"
-	      if (!handled && sscanf(cmd, "%15s %d", btn_name, &mode) == 2)
-	      {
-	        int idx = getButtonIndexByName(btn_name);
-	        if (idx >= 0 && idx < 13 && (mode == 0 || mode == 1)) {
-	          buttonMap[idx].mode = (mode == 0) ? PRESS_RELEASE : TOGGLE;
-	          char resp[6];
-	          snprintf(resp, sizeof(resp), "OK %s %s",
-	                   btn_name, (mode == 0) ? "PR" : "TG");
-	          sendAck(resp);
-	          startBeep(100);
-	        } else {
-	          sendAck("ERR INVALID_BTN_OR_MODE");
-	        }
-	        handled = true;
-	      }
-
-
-	      if (!handled && strncmp(cmd, "BEEP", 4) == 0) {
-	        int dur = 150;
-	        (void)sscanf(cmd, "BEEP %d", &dur);
-	        if (dur < 20) dur = 20;
-	        if (dur > 2000) dur = 2000;
-	        startBeep((uint32_t)dur);
-	        sendAck("OK BEEP");
-	        handled = true;
-	      }
-
-	      if (!handled) {
-	        char unknown[13];
-	        snprintf(unknown, sizeof(unknown), "UNKNOWN: %s", cmd);
-	        sendAck(unknown);
-	      }
-	    }
-	  }
 
 	      if (HAL_GetTick() - last_send_time > 5000)
 	      {

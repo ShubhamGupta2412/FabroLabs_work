@@ -24,7 +24,6 @@
 /* USER CODE BEGIN Includes */
 #include "usbd_custom_hid_if.h"
 #include <string.h>
-#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,6 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -390,7 +390,16 @@ int main(void)
 	        handled = true;
 	      }
 
-
+	      // Utilities
+	      if (!handled && strcmp(cmd, "STATUS") == 0) {
+	        char s[6];
+	        snprintf(s, sizeof(s), "S A1:%d A2:%d 1:%d 2:%d 5:%d 9:%d",
+	                 buttonMap.mode, buttonMap[8].mode,
+	                 buttonMap[9].mode, buttonMap[10].mode,
+	                 buttonMap[11].mode, buttonMap[12].mode);
+	        sendAck(s);
+	        handled = true;
+	      }
 	      if (!handled && strncmp(cmd, "BEEP", 4) == 0) {
 	        int dur = 150;
 	        (void)sscanf(cmd, "BEEP %d", &dur);
